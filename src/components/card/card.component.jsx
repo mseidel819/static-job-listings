@@ -17,10 +17,11 @@ const JobCard = ({ job }) => {
       }}
     >
       <Grid container>
-        <Grid item container>
+        <Grid item container sm={6}>
           <Grid item>
             <SvgIcon>{job.logo}</SvgIcon>
           </Grid>
+
           <Grid item container>
             <Grid item>
               <Typography variant="h3">{job.company}</Typography>
@@ -52,9 +53,23 @@ const JobCard = ({ job }) => {
               </Typography>
             </Grid>
           </Grid>
+          <Grid item>
+            <Typography variant="h2">{job.position}</Typography>
+          </Grid>
+          <Grid item container>
+            <Grid item xs={4}>
+              {job.postedAt}
+            </Grid>
+            <Grid item xs={4}>
+              {job.contract}
+            </Grid>
+            <Grid item xs={4}>
+              {job.location}
+            </Grid>
+          </Grid>
         </Grid>
 
-        <Grid item container>
+        <Grid item container sm={6}>
           right side
         </Grid>
       </Grid>
