@@ -9,7 +9,7 @@ export const themeOptions = createTheme({
       dark: "#0079ff",
     },
     secondary: {
-      main: "#f50057",
+      main: "#5CA5A5",
     },
     background: {
       default: "#ffffff",
@@ -18,7 +18,7 @@ export const themeOptions = createTheme({
     text: {
       secondary: "#faf8f6",
       primary: "#172339",
-      disabled: "rgba(254,254,254,0.8)",
+      disabled: "#5CA5A5",
     },
   },
   typography: {

@@ -11,7 +11,7 @@ import JobData from "./data.json";
 
 function App() {
   const [jobs, setJobs] = useState([]);
-  const [search, setSearch] = useState([]);
+  const [search, setSearch] = useState(["frondend", "senior", "doody"]);
 
   useEffect(() => {
     setJobs(JobData);
@@ -27,7 +27,9 @@ function App() {
   return (
     <ThemeProvider theme={themeOptions}>
       <HeaderDesktop className="header" />
-      <TagsBox />
+      <Container maxWidth="lg">
+        <TagsBox search={search} />
+      </Container>
       <Container maxWidth="lg">
         {jobs.map((job) => {
           return (
