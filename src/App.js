@@ -6,23 +6,33 @@ import { Container, ThemeProvider } from "@mui/material";
 import { themeOptions } from "./themes";
 
 import JobCard from "./components/card/card.component";
+import TagsBox from "./components/tags/tags.component";
 import JobData from "./data.json";
 
 function App() {
   const [jobs, setJobs] = useState([]);
+  const [search, setSearch] = useState([]);
 
   useEffect(() => {
     setJobs(JobData);
   }, []);
 
-  console.log(jobs);
+  const addSearchHandler = (value) => {
+    if (!search.includes(value)) {
+      setSearch([...search, value]);
+    }
+  };
 
+  console.log(search);
   return (
     <ThemeProvider theme={themeOptions}>
       <HeaderDesktop className="header" />
+      <TagsBox />
       <Container maxWidth="lg">
         {jobs.map((job) => {
-          return <JobCard job={job} key={job.id} />;
+          return (
+            <JobCard addSearch={addSearchHandler} job={job} key={job.id} />
+          );
         })}
       </Container>
     </ThemeProvider>

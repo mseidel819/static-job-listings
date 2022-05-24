@@ -49,8 +49,10 @@ export const themeOptions = createTheme({
       lineHeight: 1.32,
     },
     button: {
-      fontSize: 18,
+      fontSize: 16,
       fontWeight: 700,
+      lineHeight: 1.5,
+      letterSpacing: "-0.123077px",
     },
     body2: {
       fontWeight: 700,
