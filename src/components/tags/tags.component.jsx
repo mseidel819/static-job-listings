@@ -1,23 +1,29 @@
-import { Card, Grid, Box, Typography } from "@mui/material";
+import { Card, Grid } from "@mui/material";
 import { ReactComponent as Remove } from "../../images/icon-remove.svg";
-import { ClearButton, ButtonLabel, RemoveButton } from "./tags.styles";
+import {
+  ClearButton,
+  ButtonLabel,
+  RemoveButton,
+  ButtonContainer,
+} from "./tags.styles";
 
-const TagsBox = ({ search }) => {
+const TagsBox = ({ search, removeHandler, clearHandler }) => {
   return (
     <Card sx={{ position: "relative", top: "-30px" }}>
-      <Grid container justifyContent="space-between">
+      <Grid container justifyContent="space-between" sx={{ padding: "0 40px" }}>
         <Grid item container xs={10}>
           {search.map((tag, i) => (
-            <Box key={i}>
+            <ButtonContainer key={i}>
               <ButtonLabel variant="body2">{tag}</ButtonLabel>
-              <RemoveButton>
+
+              <RemoveButton onClick={() => removeHandler(tag)}>
                 <Remove />
               </RemoveButton>
-            </Box>
+            </ButtonContainer>
           ))}
         </Grid>
-        <Grid item xs={1}>
-          <ClearButton variant="text" color="secondary">
+        <Grid item xs={1} sx={{ alignSelf: "center" }}>
+          <ClearButton variant="text" color="secondary" onClick={clearHandler}>
             Clear
           </ClearButton>
         </Grid>

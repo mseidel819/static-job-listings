@@ -11,11 +11,23 @@ import JobData from "./data.json";
 
 function App() {
   const [jobs, setJobs] = useState([]);
-  const [search, setSearch] = useState(["frondend", "senior", "doody"]);
+  const [search, setSearch] = useState([]);
+  const [filteredjobs, setFilteredJobs] = useState(jobs);
 
   useEffect(() => {
     setJobs(JobData);
   }, []);
+
+  //role level [tools] [languages]
+
+  // useEffect(() => {
+
+  //   const newFilteredJobs = jobs.filter((job) => {
+  //     return job.name.includes(search);
+  //   });
+
+  //   setFilteredJobs(newFilteredJobs);
+  // }, [jobs, search]);
 
   const addSearchHandler = (value) => {
     if (!search.includes(value)) {
@@ -23,12 +35,26 @@ function App() {
     }
   };
 
+  const removeSearchHandler = (value) => {
+    setSearch(search.filter((item) => item !== value));
+  };
+
+  const clearHandler = () => {
+    setSearch([]);
+  };
+
   console.log(search);
   return (
     <ThemeProvider theme={themeOptions}>
       <HeaderDesktop className="header" />
       <Container maxWidth="lg">
-        <TagsBox search={search} />
+        {search.length > 0 && (
+          <TagsBox
+            search={search}
+            removeHandler={removeSearchHandler}
+            clearHandler={clearHandler}
+          />
+        )}
       </Container>
       <Container maxWidth="lg">
         {jobs.map((job) => {

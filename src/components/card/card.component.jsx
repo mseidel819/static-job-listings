@@ -3,6 +3,7 @@ import { Grid, Card, Typography } from "@mui/material";
 import { StyledButton, TitleButton } from "./card.styles";
 
 const JobCard = ({ job, addSearch }) => {
+  console.log(job);
   return (
     <Card
       sx={{
