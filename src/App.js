@@ -23,7 +23,7 @@ function App() {
   useEffect(() => {
     const newFilteredJobs = jobs.filter((job) => {
       const tagArray = [job.role, job.level, ...job.tools, ...job.languages];
-      console.log(tagArray);
+
       if (search.length === 0) {
         return job;
       }
@@ -50,7 +50,6 @@ function App() {
     setSearch([]);
   };
 
-  console.log(search);
   return (
     <ThemeProvider theme={themeOptions}>
       <HeaderDesktop className="header" />
@@ -63,10 +62,18 @@ function App() {
           />
         )}
       </Container>
-      <Container maxWidth="lg">
-        {filteredJobs.map((job) => {
+      <Container
+        maxWidth="lg"
+        sx={{ marginTop: `${search.length === 0 ? "74px" : 0}` }}
+      >
+        {filteredJobs.map((job, i) => {
           return (
-            <JobCard addSearch={addSearchHandler} job={job} key={job.id} />
+            <JobCard
+              addSearch={addSearchHandler}
+              job={job}
+              id={job.id}
+              key={job.id}
+            />
           );
         })}
       </Container>
