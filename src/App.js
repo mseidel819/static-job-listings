@@ -12,7 +12,7 @@ import JobData from "./data.json";
 function App() {
   const [jobs, setJobs] = useState([]);
   const [search, setSearch] = useState([]);
-  const [filteredjobs, setFilteredJobs] = useState(jobs);
+  const [filteredJobs, setFilteredJobs] = useState(jobs);
 
   useEffect(() => {
     setJobs(JobData);
@@ -20,14 +20,21 @@ function App() {
 
   //role level [tools] [languages]
 
-  // useEffect(() => {
+  useEffect(() => {
+    const newFilteredJobs = jobs.filter((job) => {
+      const tagArray = [job.role, job.level, ...job.tools, ...job.languages];
+      console.log(tagArray);
+      if (search.length === 0) {
+        return job;
+      }
 
-  //   const newFilteredJobs = jobs.filter((job) => {
-  //     return job.name.includes(search);
-  //   });
+      return search.every((element) => {
+        return tagArray.includes(element);
+      });
+    });
 
-  //   setFilteredJobs(newFilteredJobs);
-  // }, [jobs, search]);
+    setFilteredJobs(newFilteredJobs);
+  }, [jobs, search]);
 
   const addSearchHandler = (value) => {
     if (!search.includes(value)) {
@@ -57,7 +64,7 @@ function App() {
         )}
       </Container>
       <Container maxWidth="lg">
-        {jobs.map((job) => {
+        {filteredJobs.map((job) => {
           return (
             <JobCard addSearch={addSearchHandler} job={job} key={job.id} />
           );
