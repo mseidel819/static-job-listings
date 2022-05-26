@@ -9,7 +9,10 @@ import {
 
 const TagsBox = ({ search, removeHandler, clearHandler }) => {
   return (
-    <Card sx={{ position: "relative", top: "-30px", marginBottom: "40px" }}>
+    <Card
+      role="banner"
+      sx={{ position: "relative", top: "-30px", marginBottom: "40px" }}
+    >
       <Grid
         container
         sx={{

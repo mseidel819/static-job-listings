@@ -29,6 +29,7 @@ const JobCard = ({ job, addSearch, id }) => {
 
   return (
     <Card
+      role="main"
       sx={{
         boxShadow: "0px 15px 20px -5px rgba(13, 113, 130, 0.15)",
         marginBottom: { xs: "60px", md: "24px" },
