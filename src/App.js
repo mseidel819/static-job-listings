@@ -53,7 +53,8 @@ function App() {
       <div className="header">
         <HeaderDesktop />
       </div>
-      <Container maxWidth="lg">
+      <h1></h1>
+      <Container role="main" maxWidth="lg">
         {search.length > 0 && (
           <TagsBox
             search={search}
