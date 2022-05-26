@@ -1,7 +1,7 @@
 import "./App.css";
 import { useEffect, useState } from "react";
 import { ReactComponent as HeaderDesktop } from "./images/bg-header-desktop.svg";
-import { ReactComponent as HeaderMobile } from "./images/bg-header-mobile.svg";
+
 import { Container, ThemeProvider } from "@mui/material";
 import { themeOptions } from "./themes";
 
@@ -17,8 +17,6 @@ function App() {
   useEffect(() => {
     setJobs(JobData);
   }, []);
-
-  //role level [tools] [languages]
 
   useEffect(() => {
     const newFilteredJobs = jobs.filter((job) => {

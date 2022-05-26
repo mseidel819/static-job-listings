@@ -9,9 +9,15 @@ import {
 
 const TagsBox = ({ search, removeHandler, clearHandler }) => {
   return (
-    <Card sx={{ position: "relative", top: "-30px" }}>
-      <Grid container justifyContent="space-between" sx={{ padding: "0 40px" }}>
-        <Grid item container xs={10}>
+    <Card sx={{ position: "relative", top: "-30px", marginBottom: "40px" }}>
+      <Grid
+        container
+        sx={{
+          padding: { xs: "0 5px", md: "0 40px" },
+          justifyContent: { xs: "flex-start", md: "space-between" },
+        }}
+      >
+        <Grid item container xs={9} md={10}>
           {search.map((tag, i) => (
             <ButtonContainer key={i}>
               <ButtonLabel variant="body2">{tag}</ButtonLabel>
@@ -22,7 +28,7 @@ const TagsBox = ({ search, removeHandler, clearHandler }) => {
             </ButtonContainer>
           ))}
         </Grid>
-        <Grid item xs={1} sx={{ alignSelf: "center" }}>
+        <Grid item xs={2} md={1} sx={{ alignSelf: "center" }}>
           <ClearButton variant="text" color="secondary" onClick={clearHandler}>
             Clear
           </ClearButton>

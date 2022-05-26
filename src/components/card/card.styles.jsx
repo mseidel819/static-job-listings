@@ -21,7 +21,7 @@ export const StyledButton = styled(Button)({
 
 export const TitleButton = styled(Button)({
   fontWeight: 700,
-  fontSize: { xs: "16px", md: "22px" },
+  fontSize: "22px",
   lineHeight: "24px",
   margin: 0,
   padding: 0,
@@ -30,5 +30,9 @@ export const TitleButton = styled(Button)({
   "&:hover": {
     backgroundColor: "white",
     color: "#5CA5A5",
+  },
+
+  "@media (max-width:600px)": {
+    fontSize: "16px",
   },
 });
