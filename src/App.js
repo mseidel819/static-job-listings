@@ -53,7 +53,7 @@ function App() {
       <div className="header">
         <HeaderDesktop />
       </div>
-      <h1></h1>
+
       <Container maxWidth="lg">
         {search.length > 0 && (
           <TagsBox
@@ -64,6 +64,7 @@ function App() {
         )}
       </Container>
       <Container
+        role="main"
         maxWidth="lg"
         sx={{ marginTop: `${search.length === 0 ? "74px" : 0}` }}
       >
