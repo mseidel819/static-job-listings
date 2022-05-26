@@ -1,4 +1,6 @@
 .header {
   background-color: #5ca5a5;
   width: 100vw;
+  display: flex;
+  justify-content: center;
 }

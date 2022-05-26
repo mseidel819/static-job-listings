@@ -31,15 +31,38 @@ const JobCard = ({ job, addSearch, id }) => {
     <Card
       sx={{
         boxShadow: "0px 15px 20px -5px rgba(13, 113, 130, 0.15)",
-        marginBottom: "24px",
-        padding: "32px 40px",
+        marginBottom: { xs: "60px", md: "24px" },
+        padding: { xs: "32px 24px", md: "32px 40px" },
+        borderLeft: `${job.featured ? "5px solid #5CA5A5" : "none"}`,
+        overflow: "visible",
       }}
     >
-      <Grid container>
-        <Grid item md={1.5}>
+      <Grid container rowSpacing={2}>
+        <Grid
+          item
+          xs={0}
+          md={1.5}
+          sx={{
+            position: { xs: "relative", md: "static" },
+            top: "10px",
+
+            marginTop: { xs: "-82px", md: "0" },
+          }}
+        >
           {imgArr[id]}
         </Grid>
-        <Grid item container md={4} rowSpacing={1}>
+        <Grid
+          item
+          container
+          xs={12}
+          md={4}
+          rowSpacing={1}
+          sx={{
+            borderBottom: { xs: "1px solid #B7C4C4", md: "none" },
+            paddingBottom: { xs: "15px", md: "0" },
+            marginBottom: { xs: "15px", md: "0" },
+          }}
+        >
           <Grid item container alignItems="center" columnSpacing={1}>
             <Grid item>
               <Typography variant="h3" color="#5CA5A5">
@@ -87,7 +110,7 @@ const JobCard = ({ job, addSearch, id }) => {
             <Typography
               variant="body1"
               color="#7C8F8F"
-              sx={{ margin: "auto 18px" }}
+              sx={{ margin: { xs: "auto 5px", md: "auto 15px" } }}
             >
               &#8226;
             </Typography>
@@ -97,7 +120,7 @@ const JobCard = ({ job, addSearch, id }) => {
             <Typography
               variant="body1"
               color="#7C8F8F"
-              sx={{ margin: "auto 18px" }}
+              sx={{ margin: { xs: "auto 5px", md: "auto 15px" } }}
             >
               &#8226;
             </Typography>
@@ -109,11 +132,12 @@ const JobCard = ({ job, addSearch, id }) => {
 
         <Grid
           item
+          xs={12}
           md={6.5}
           container
-          justifyContent="flex-end"
           sx={{
             textAlign: "center",
+            justifyContent: { xs: "flex-start", md: "flex-end" },
           }}
         >
           <StyledButton onClick={() => addSearch(`${job.role}`)}>

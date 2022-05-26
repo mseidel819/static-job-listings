@@ -52,7 +52,9 @@ function App() {
 
   return (
     <ThemeProvider theme={themeOptions}>
-      <HeaderDesktop className="header" />
+      <div className="header">
+        <HeaderDesktop />
+      </div>
       <Container maxWidth="lg">
         {search.length > 0 && (
           <TagsBox

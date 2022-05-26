@@ -6,7 +6,7 @@ export const StyledButton = styled(Button)({
   color: "#5CA5A5",
   borderRadius: "4px",
   padding: "5px 10px",
-  margin: "auto 0",
+  margin: "auto 0px",
   marginRight: "16px",
   textTransform: "none",
 
@@ -14,11 +14,14 @@ export const StyledButton = styled(Button)({
     backgroundColor: "#5CA5A5",
     color: "hsl(180, 31%, 95%)",
   },
+  "@media (max-width:600px)": {
+    marginBottom: "16px",
+  },
 });
 
 export const TitleButton = styled(Button)({
   fontWeight: 700,
-  fontSize: "22px",
+  fontSize: { xs: "16px", md: "22px" },
   lineHeight: "24px",
   margin: 0,
   padding: 0,
