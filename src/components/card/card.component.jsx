@@ -49,7 +49,7 @@ const JobCard = ({ job, addSearch, id }) => {
             marginTop: { xs: "-82px", md: "0" },
           }}
         >
-          <img src={imgArr[id - 1]} />
+          <img src={imgArr[id - 1]} alt={job.title} />
         </Grid>
         <Grid
           item
