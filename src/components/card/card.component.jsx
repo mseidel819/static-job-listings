@@ -2,30 +2,30 @@ import { Grid, Card, Typography } from "@mui/material";
 
 import { StyledButton, TitleButton } from "./card.styles";
 
-import { ReactComponent as Account } from "../../images/account.svg";
-import { ReactComponent as EyeCam } from "../../images/eyecam-co.svg";
-import { ReactComponent as Faceit } from "../../images/faceit.svg";
-import { ReactComponent as Insure } from "../../images/insure.svg";
-import { ReactComponent as LoopStudios } from "../../images/loop-studios.svg";
-import { ReactComponent as Manage } from "../../images/manage.svg";
-import { ReactComponent as MyHome } from "../../images/myhome.svg";
-import { ReactComponent as Photosnap } from "../../images/photosnap.svg";
-import { ReactComponent as Shortly } from "../../images/shortly.svg";
-import { ReactComponent as TheAirFilterCompany } from "../../images/the-air-filter-company.svg";
+import Account from "../../images/account.svg";
+import EyeCam from "../../images/eyecam-co.svg";
+import Faceit from "../../images/faceit.svg";
+import Insure from "../../images/insure.svg";
+import LoopStudios from "../../images/loop-studios.svg";
+import Manage from "../../images/manage.svg";
+import MyHome from "../../images/myhome.svg";
+import Photosnap from "../../images/photosnap.svg";
+import Shortly from "../../images/shortly.svg";
+import TheAirFilterCompany from "../../images/the-air-filter-company.svg";
 
 const JobCard = ({ job, addSearch, id }) => {
-  const imgArr = {
-    1: <Photosnap />,
-    2: <Manage />,
-    3: <Account />,
-    4: <MyHome />,
-    5: <LoopStudios />,
-    6: <Faceit />,
-    7: <Shortly />,
-    8: <Insure />,
-    9: <EyeCam />,
-    10: <TheAirFilterCompany />,
-  };
+  const imgArr = [
+    Photosnap,
+    Manage,
+    Account,
+    MyHome,
+    LoopStudios,
+    Faceit,
+    Shortly,
+    Insure,
+    EyeCam,
+    TheAirFilterCompany,
+  ];
 
   return (
     <Card
@@ -49,7 +49,7 @@ const JobCard = ({ job, addSearch, id }) => {
             marginTop: { xs: "-82px", md: "0" },
           }}
         >
-          {imgArr[id]}
+          <img src={imgArr[id - 1]} />
         </Grid>
         <Grid
           item
