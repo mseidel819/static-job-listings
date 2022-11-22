@@ -9,10 +9,26 @@ import JobCard from "./components/card/card.component";
 import TagsBox from "./components/tags/tags.component";
 import JobData from "./data.json";
 
+export type Job = {
+  id: number;
+  company: string;
+  logo: string;
+  new: boolean;
+  featured: boolean;
+  position: string;
+  role: string;
+  level: string;
+  postedAt: string;
+  contract: string;
+  location: string;
+  languages: string[];
+  tools: string[];
+};
+
 function App() {
-  const [jobs, setJobs] = useState([]);
-  const [search, setSearch] = useState([]);
-  const [filteredJobs, setFilteredJobs] = useState(jobs);
+  const [jobs, setJobs] = useState<Array<Job>>([]);
+  const [search, setSearch] = useState<Array<string>>([]);
+  const [filteredJobs, setFilteredJobs] = useState<Array<Job>>(jobs);
 
   useEffect(() => {
     setJobs(JobData);
@@ -34,13 +50,13 @@ function App() {
     setFilteredJobs(newFilteredJobs);
   }, [jobs, search]);
 
-  const addSearchHandler = (value) => {
+  const addSearchHandler = (value: string) => {
     if (!search.includes(value)) {
       setSearch([...search, value]);
     }
   };
 
-  const removeSearchHandler = (value) => {
+  const removeSearchHandler = (value: string) => {
     setSearch(search.filter((item) => item !== value));
   };
 

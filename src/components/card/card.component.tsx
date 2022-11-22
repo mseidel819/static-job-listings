@@ -1,7 +1,7 @@
 import { Grid, Card, Typography } from "@mui/material";
 
 import { StyledButton, TitleButton } from "./card.styles";
-
+import { Job } from "../../App";
 import Account from "../../images/account.svg";
 import EyeCam from "../../images/eyecam-co.svg";
 import Faceit from "../../images/faceit.svg";
@@ -13,7 +13,12 @@ import Photosnap from "../../images/photosnap.svg";
 import Shortly from "../../images/shortly.svg";
 import TheAirFilterCompany from "../../images/the-air-filter-company.svg";
 
-const JobCard = ({ job, addSearch, id }) => {
+type JobCardProps = {
+  job: Job;
+  addSearch: (value: string) => void;
+  id: number;
+};
+const JobCard = ({ job, addSearch, id }: JobCardProps) => {
   const imgArr = [
     Photosnap,
     Manage,
@@ -49,7 +54,7 @@ const JobCard = ({ job, addSearch, id }) => {
             marginTop: { xs: "-82px", md: "0" },
           }}
         >
-          <img src={imgArr[id - 1]} alt={job.title} />
+          <img src={imgArr[id - 1]} alt={job.company} />
         </Grid>
         <Grid
           item
