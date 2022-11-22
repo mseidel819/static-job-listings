@@ -6,8 +6,9 @@ import {
   RemoveButton,
   ButtonContainer,
 } from "./tags.styles";
+import { TagsBoxProps } from "../../types";
 
-const TagsBox = ({ search, removeHandler, clearHandler }) => {
+const TagsBox = ({ search, removeHandler, clearHandler }: TagsBoxProps) => {
   return (
     <Card
       role="banner"
