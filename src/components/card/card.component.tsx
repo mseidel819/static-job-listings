@@ -1,7 +1,7 @@
 import { Grid, Card, Typography } from "@mui/material";
 
 import { StyledButton, TitleButton } from "./card.styles";
-import { Job } from "../../App";
+import { JobCardProps } from "../../types";
 import Account from "../../images/account.svg";
 import EyeCam from "../../images/eyecam-co.svg";
 import Faceit from "../../images/faceit.svg";
@@ -13,11 +13,6 @@ import Photosnap from "../../images/photosnap.svg";
 import Shortly from "../../images/shortly.svg";
 import TheAirFilterCompany from "../../images/the-air-filter-company.svg";
 
-type JobCardProps = {
-  job: Job;
-  addSearch: (value: string) => void;
-  id: number;
-};
 const JobCard = ({ job, addSearch, id }: JobCardProps) => {
   const imgArr = [
     Photosnap,

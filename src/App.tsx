@@ -8,22 +8,7 @@ import { themeOptions } from "./themes";
 import JobCard from "./components/card/card.component";
 import TagsBox from "./components/tags/tags.component";
 import JobData from "./data.json";
-
-export type Job = {
-  id: number;
-  company: string;
-  logo: string;
-  new: boolean;
-  featured: boolean;
-  position: string;
-  role: string;
-  level: string;
-  postedAt: string;
-  contract: string;
-  location: string;
-  languages: string[];
-  tools: string[];
-};
+import { Job } from "./types";
 
 function App() {
   const [jobs, setJobs] = useState<Array<Job>>([]);
